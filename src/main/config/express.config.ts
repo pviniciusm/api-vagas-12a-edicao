@@ -1,12 +1,16 @@
 import cors from "cors";
-import express from "express";
+import express, { Request, Response } from "express";
 
 export const createApp = () => {
-    const app = express();
-    app.use(express.json());
-    app.use(cors());
+  const app = express();
+  app.use(express.json());
+  app.use(cors());
 
-    // definir as rotas
+  app.get("/", (req: Request, res: Response) =>
+    res.status(200).json({ ok: true, message: "API JOBS" })
+  );
 
-    return app;
+  // ROTAS
+
+  return app;
 };
