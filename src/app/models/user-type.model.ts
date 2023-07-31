@@ -1,5 +1,7 @@
 export enum UserType {
-    Admin = "A",
-    Candidate = "C",
-    Recruiter = "R",
+  Admin = "A",
+  Candidate = "C",
+  Recruiter = "R",
 }
+
+// export const EUserType = ["A", "C", "R"];
