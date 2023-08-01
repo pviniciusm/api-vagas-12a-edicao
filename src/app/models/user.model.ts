@@ -33,6 +33,16 @@ export class User {
         return this._type;
     }
 
+    public toJson() {
+        return {
+            id: this._id,
+            name: this._name,
+            email: this._email,
+            type: this._type,
+            enterpriseName: this._enterpriseName,
+        };
+    }
+
     public static create(userEntity: UserEntity) {
         const user = new User(userEntity.name, userEntity.email, userEntity.password, userEntity.type, userEntity.enterpriseName);
 

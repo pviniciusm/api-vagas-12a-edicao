@@ -1,6 +1,7 @@
 import cors from "cors";
 import express, { Request, Response } from "express";
 import { recruiterRoutes } from "../../app/features/recruiter/routes/recruiter.routes";
+import { loginRoutes } from "../../app/features/user/routes/login.routes";
 
 export const createApp = () => {
     const app = express();
@@ -11,6 +12,7 @@ export const createApp = () => {
 
     // ROTAS
     app.use("/recruiter", recruiterRoutes());
+    app.use("/auth", loginRoutes());
 
     return app;
 };
