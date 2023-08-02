@@ -3,5 +3,3 @@ export enum UserType {
   Candidate = "C",
   Recruiter = "R",
 }
-
-// export const EUserType = ["A", "C", "R"];
