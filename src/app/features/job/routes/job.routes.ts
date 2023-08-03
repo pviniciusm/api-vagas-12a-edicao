@@ -5,12 +5,15 @@ import { RecruiterValidator } from "../../recruiter/validators/recruiter.validat
 import { jobApplicationRoutes } from "../../job-aplication/routes/job-application.routes";
 
 export const jobRoute = () => {
-    const app = Router();
+  const app = Router();
 
-    const logged = [LoginValidator.checkToken, RecruiterValidator.checkRecruiterToken];
+  const logged = [
+    LoginValidator.checkToken,
+    RecruiterValidator.checkRecruiterToken,
+  ];
 
-    app.post("/", logged, new JobController().create);
-    app.use("/:idJob/application", jobApplicationRoutes());
+  app.post("/", logged, new JobController().create);
+  app.use("/:idJob/application", jobApplicationRoutes());
 
-    return app;
+  return app;
 };
