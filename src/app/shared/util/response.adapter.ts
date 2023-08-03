@@ -17,6 +17,14 @@ export class UsecaseResponse {
         };
     }
 
+    public static invalidField(field: string, reason: string): Result {
+        return {
+            ok: false,
+            message: `${field} is invalid: ${reason} `,
+            code: 400,
+        };
+    }
+
     public static success(message: string, data: any): Result {
         return {
             ok: true,

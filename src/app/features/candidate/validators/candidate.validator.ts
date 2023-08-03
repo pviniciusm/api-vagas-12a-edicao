@@ -2,15 +2,15 @@ import { NextFunction, Request, Response } from "express";
 import { JwtService } from "../../../shared/services/jwt.service";
 import { HttpResponse } from "../../../shared/util";
 
-export class RecruiterValidator {
-    public static checkRecruiterToken(req: Request, res: Response, next: NextFunction) {
+export class CandidateValidator {
+    public static checkCandidateToken(req: Request, res: Response, next: NextFunction) {
         try {
             const token = req.headers.authorization;
 
             const jwtService = new JwtService();
             const user = jwtService.decodeToken(token as string);
 
-            if (user.type !== "R") {
+            if (user.type !== "C") {
                 return HttpResponse.forbidden(res);
             }
 
