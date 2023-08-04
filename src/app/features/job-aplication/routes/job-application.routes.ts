@@ -15,7 +15,7 @@ export const jobApplicationRoutes = () => {
 
   app.post("/", logged, new JobApplicationController().create);
 
-  // LISTA VAGAS APLICADAS
+  // LISTA VAGAS APLICADAS - RECRUITER
   app.get("/job", logged, new JobApplicationController().listByCandidate);
 
   return app;

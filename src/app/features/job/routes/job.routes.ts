@@ -13,7 +13,8 @@ export const jobRoute = () => {
   ];
 
   app.post("/", logged, new JobController().create);
-  app.use("/:idJob/application", jobApplicationRoutes());
+
+  app.get("/:idJob/candidate", logged, new JobController().listByJob);
 
   return app;
 };

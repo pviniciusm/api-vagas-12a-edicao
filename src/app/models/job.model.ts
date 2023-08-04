@@ -46,7 +46,7 @@ export class Job {
       enterprise: this._enterprise,
       limitDate: this._limitDate,
       isActive: this._isActive,
-      recruiter: this._recruiter?.name,
+      idRecruiter: this._recruiter?.id,
       maxCandidate: this._maxCandidates,
     };
   }
