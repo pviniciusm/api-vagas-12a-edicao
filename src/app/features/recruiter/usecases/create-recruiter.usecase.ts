@@ -1,4 +1,5 @@
 import { Recruiter } from "../../../models/recruiter.model";
+import { CacheRepositoty } from "../../../shared/database/repositories/cache.repository";
 import { Result, Usecase } from "../../../shared/util";
 import { UserRepository } from "../../user/repositories/user.repository";
 
@@ -16,6 +17,7 @@ export class CreateRecruiterUsecase implements Usecase {
 
     // 2 - verificar se o user ja existe (email)
     const repository = new UserRepository();
+    const cacheRepository = new CacheRepositoty();
     const user = await repository.getByEmail(params.email);
 
     // Se user existe com o mesmo email, retorna erro 400
@@ -33,7 +35,10 @@ export class CreateRecruiterUsecase implements Usecase {
       params.password,
       params.enterpriseName
     );
+
     await repository.create(recruiter);
+
+    await cacheRepository.delete("users");
 
     return {
       ok: true,
