@@ -1,6 +1,6 @@
 import { CacheDatabase } from "../../../../main/database/cache.connection";
 
-export class CacheRepositoty {
+export class CacheRepository {
   private _repository = CacheDatabase.connection;
 
   // GET - buscar

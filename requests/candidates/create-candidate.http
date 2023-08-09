@@ -4,7 +4,7 @@ POST {{HOST}}/candidate HTTP/1.1
 Content-Type: application/json 
 
 {
-    "name": "Maria Lurdes",
-    "email": "maria@gmail.com",
+    "name": "Bruno João",
+    "email": "bruno@gmail.com",
     "password": "senha123"
 }

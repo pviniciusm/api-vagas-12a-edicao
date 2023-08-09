@@ -1,14 +1,14 @@
 import { UserType } from "../../../models/user-type.model";
-import { CacheRepositoty } from "../../../shared/database/repositories/cache.repository";
+import { CacheRepository } from "../../../shared/database/repositories/cache.repository";
 import { Result, Usecase } from "../../../shared/util";
 import { UserRepository } from "../../user/repositories/user.repository";
 
 export class ListRecruitersUsecase implements Usecase {
   public async execute(): Promise<Result> {
     const repository = new UserRepository();
-    const cacheRepositoty = new CacheRepositoty();
+    const cacheRepository = new CacheRepository();
 
-    const cacheResult = await cacheRepositoty.get("users");
+    const cacheResult = await cacheRepository.get("recruiters");
 
     if (cacheResult) {
       return {
@@ -22,7 +22,7 @@ export class ListRecruitersUsecase implements Usecase {
     const result = await repository.list(UserType.Recruiter);
     const data = result?.map((recruiter) => recruiter.toJson());
 
-    await cacheRepositoty.set("users", data);
+    await cacheRepository.set("recruiters", data);
 
     return {
       ok: true,
