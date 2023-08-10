@@ -6,6 +6,7 @@ import { CacheDatabase } from "./main/database/cache.connection";
 // AGUARDA TUDO SE RESOLVER
 Promise.all([Database.connect(), CacheDatabase.connect()]).then(() => {
     Server.listen();
+    console.log("Feito");
 });
 
 // Database.connect().then(() => {
