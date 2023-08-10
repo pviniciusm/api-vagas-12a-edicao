@@ -4,6 +4,6 @@ POST {{HOST}}/auth HTTP/1.1
 Content-Type: application/json 
 
 { 
-    "email": "moises@gmail.com",
+    "email": "joao@gmail.com",
     "password": "senha123"
 }
