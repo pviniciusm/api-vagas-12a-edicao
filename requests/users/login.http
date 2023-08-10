@@ -1,9 +1,9 @@
-@HOST = http://localhost:3333
+@HOST = http://localhost:8080
 
 POST {{HOST}}/auth HTTP/1.1
 Content-Type: application/json 
 
 { 
-    "email": "daphne@dog.com",
-    "password": "12345"
+    "email": "moises@gmail.com",
+    "password": "senha123"
 }

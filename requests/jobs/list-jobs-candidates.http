@@ -1,0 +1,5 @@
+@HOST = http://localhost:8080
+
+GET {{HOST}}/job HTTP/1.1
+Content-Type: application/json 
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzMTcxMzJlLWExYzUtNGEwMy1iZTg3LTM3NDg1Njk2OTA1YSIsIm5hbWUiOiJNb2lzZXMgTHVjYXMiLCJlbWFpbCI6Im1vaXNlc0BnbWFpbC5jb20iLCJ0eXBlIjoiUiIsImVudGVycHJpc2VOYW1lIjoiVGVjIFNBIiwiaWF0IjoxNjkxNzA5OTI0fQ.0yqOLHi71N34kfFGAKCua07Euyv56rqKyqxJPjP1QTI
