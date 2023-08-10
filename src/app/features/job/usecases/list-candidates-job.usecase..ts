@@ -1,3 +1,4 @@
+import { CacheRepository } from "../../../shared/database/repositories/cache.repository";
 import { Result, Usecase, UsecaseResponse } from "../../../shared/util";
 import { JobRepository } from "../repositories/job.repository";
 
