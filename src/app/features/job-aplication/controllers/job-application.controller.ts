@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
-import { CreateJobApplicationUsecase } from "../usecases/create-job-application.usecase";
-import { ListJobsApplication } from "../usecases/list-job-application.usecase";
+
+import { ListJobsApplication } from "../useCases/list-job-application.usecase";
+import { CreateJobApplicationUsecase } from "../useCases/create-job-application.useCase";
 
 // POST /job
 // POST /job/:id/application
