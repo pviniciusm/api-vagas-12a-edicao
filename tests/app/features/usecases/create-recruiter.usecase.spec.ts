@@ -59,7 +59,6 @@ describe("Create Recruiter Usecase", () => {
   // teste criar o usuario
   test("Retorna 201 caso o usuário seja criado com sucesso", async () => {
     const sut = createSut();
-    const user = userMockSut();
 
     const params = {
       email: "any_new_email",
