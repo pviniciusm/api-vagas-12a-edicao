@@ -2,7 +2,6 @@ import { CreateRecruiterUsecase } from "../../../../../src/app/features/recruite
 import { UserRepository } from "../../../../../src/app/features/user/repositories/user.repository";
 import { UserType } from "../../../../../src/app/models/user-type.model";
 import { User } from "../../../../../src/app/models/user.model";
-import { UserEntity } from "../../../../../src/app/shared/database/entities/user.entity";
 import { CacheRepository } from "../../../../../src/app/shared/database/repositories/cache.repository";
 import { CacheDatabase } from "../../../../../src/main/database/cache.connection";
 import { Database } from "../../../../../src/main/database/database.connection";
@@ -18,7 +17,6 @@ describe("Create Recruiter Usecase", () => {
   });
 
   afterAll(async () => {
-    await Database.connection.manager.delete(UserEntity, {});
     await Database.connection.destroy();
     await CacheDatabase.connection.quit();
   });
