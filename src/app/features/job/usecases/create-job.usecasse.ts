@@ -4,7 +4,7 @@ import { Result, Usecase, UsecaseResponse } from "../../../shared/util";
 import { UserRepository } from "../../user/repositories/user.repository";
 import { JobRepository } from "../repositories/job.repository";
 
-interface CreateJobParams {
+export interface CreateJobParams {
   description: string;
   enterprise: string;
   limitDate: Date;
