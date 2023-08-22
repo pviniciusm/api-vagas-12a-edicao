@@ -14,7 +14,7 @@
     "typeorm:run": "typeorm-ts-node-commonjs migration:run -d ./src/main/config/database.config.ts",
     "typeorm:revert": "npm run typeorm migration:revert -- -d ./src/main/config/database.config.ts",
     "typeorm:generate": "typeorm-ts-node-esm migration:generate -d ./src/main/config/database.config.ts src/app/shared/database/migrations/CreateTables",
-    "test": "cross-env NODE_ENV=test jest --silent --noStackTrace --runInBand",
+    "test": "cross-env NODE_ENV=test jest --maxWorkers=1 --silent --noStackTrace",
     "test:verbose": "jest -verbose -runInBand -detectOpenHandles",
     "test:coverage": "jest -runInBand -coverage",
     "test:watch": "jest -silent -noStackTrace -runInBand -watchAll",
