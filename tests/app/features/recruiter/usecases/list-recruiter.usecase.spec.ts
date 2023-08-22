@@ -1,10 +1,10 @@
+import { ListRecruitersUsecase } from "../../../../../src/app/features/recruiter/usecases/list-recruiters.usecase";
 import { UserRepository } from "../../../../../src/app/features/user/repositories/user.repository";
 import { UserType } from "../../../../../src/app/models/user-type.model";
 import { User } from "../../../../../src/app/models/user.model";
 import { CacheRepository } from "../../../../../src/app/shared/database/repositories/cache.repository";
 import { CacheDatabase } from "../../../../../src/main/database/cache.connection";
 import { Database } from "../../../../../src/main/database/database.connection";
-import { ListRecruitersUsecase } from "../../../../../src/app/features/recruiter/usecases/list-recruiters.usecase";
 
 describe("List Recruiter Usecase", () => {
   beforeAll(async () => {

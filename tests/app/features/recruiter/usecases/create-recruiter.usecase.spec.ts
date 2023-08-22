@@ -70,8 +70,8 @@ describe("Create Recruiter Usecase", () => {
     jest
       .spyOn(UserRepository.prototype, "getByEmail")
       .mockResolvedValue(undefined);
-    jest.spyOn(UserRepository.prototype, "create");
-    jest.spyOn(CacheRepository.prototype, "delete");
+    jest.spyOn(UserRepository.prototype, "create").mockResolvedValue();
+    jest.spyOn(CacheRepository.prototype, "delete").mockResolvedValue();
 
     const result = await sut.execute(params);
 

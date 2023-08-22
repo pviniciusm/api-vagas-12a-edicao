@@ -14,10 +14,11 @@
     "typeorm:run": "typeorm-ts-node-commonjs migration:run -d ./src/main/config/database.config.ts",
     "typeorm:revert": "npm run typeorm migration:revert -- -d ./src/main/config/database.config.ts",
     "typeorm:generate": "typeorm-ts-node-esm migration:generate -d ./src/main/config/database.config.ts src/app/shared/database/migrations/CreateTables",
-    "test": "jest --silent --noStackTrace --runInBand",
+    "test": "cross-env NODE_ENV=test jest --silent --noStackTrace --runInBand",
     "test:verbose": "jest -verbose -runInBand -detectOpenHandles",
     "test:coverage": "jest -runInBand -coverage",
-    "test:watch": "jest -silent -noStackTrace -runInBand -watchAll"
+    "test:watch": "jest -silent -noStackTrace -runInBand -watchAll",
+    "typeorm:run:test": "cross-env NODE_ENV=test typeorm-ts-node-commonjs migration:run -d ./src/main/config/database.config.ts"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +30,7 @@
     "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^18.11.18",
     "@types/pg": "^8.10.2",
+    "@types/supertest": "^2.0.12",
     "@types/uuid": "^9.0.0",
     "ts-jest": "^29.1.1",
     "ts-node-dev": "^2.0.0",
@@ -37,6 +39,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "cpf-cnpj-validator": "^1.0.3",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "ioredis": "^5.3.2",
@@ -44,6 +47,7 @@
     "jsonwebtoken": "^9.0.1",
     "pg": "^8.11.1",
     "reflect-metadata": "^0.1.13",
+    "supertest": "^6.3.3",
     "typeorm": "^0.3.11",
     "uuid": "^9.0.0"
   }
