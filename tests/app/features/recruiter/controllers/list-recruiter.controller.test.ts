@@ -62,10 +62,6 @@ describe("Recuiter Controller - LIST", () => {
     });
   };
 
-  const makeCacheSut = async (data: User[]) => {
-    await CacheDatabase.connection.set("recruiters", JSON.stringify(data));
-  };
-
   const route = "/recruiter";
 
   test("Retorna não autorizado, quando não informado o token", async () => {
